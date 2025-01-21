@@ -7,7 +7,6 @@ const response = require("./resTemp");
 const app = express();
 
 app.use(cors());
-
 app.use(bodyParser.json());
 
 app.get("/api/data", (req, res) => {
@@ -53,7 +52,5 @@ app.get("/api/data/categories/:categorie", (req, res) => {
   }
 });
 
-const PORT = 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// Ekspor aplikasi untuk digunakan oleh Vercel
+module.exports = app;
